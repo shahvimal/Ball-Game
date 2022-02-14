@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DestroyObjectOnColliding : MonoBehaviour
 {
@@ -26,6 +27,11 @@ public class DestroyObjectOnColliding : MonoBehaviour
             {
                 Destroy(collision.gameObject);
             }
+        }
+
+        else if (collision.collider.tag == "Player")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         
     }
